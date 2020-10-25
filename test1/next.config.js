@@ -1,26 +1,26 @@
-const { withModuleFederation } = require("@module-federation/nexjs-mf");
-const path = require("path");
+const {
+  withModuleFederation,
+  MergeRuntime,
+} = require("@module-federation/nextjs-mf");
 
 module.exports = {
   webpack: (config, options) => {
-    const { buildId, dev, isServer, defaultLoaders, webpack } = options;
-    const mfConf = {
-      name: "next1",
-      library: { type: config.output.libraryTarget, name: "next1" },
+    withModuleFederation(config, options, {
+      name: "test1",
+      library: { type: config.output.libraryTarget, name: "test1" },
       filename: "static/runtime/remoteEntry.js",
       remotes: {},
       exposes: {
         "./nav": "./components/nav",
       },
       shared: [],
-    };
+    });
 
-    // Configures ModuleFederation and other Webpack properties
-    withModuleFederation(config, options, mfConf);
-
-    if (!isServer) {
+    if (!options.isServer) {
       config.output.publicPath = "http://localhost:3000/_next/";
     }
+
+    config.plugins.push(new MergeRuntime());
 
     return config;
   },

@@ -1,5 +1,5 @@
 import React from "react";
 
-const Nav = () => <div>Header!</div>;
+const Nav = () => <div>Header 2!</div>;
 
 export default Nav;

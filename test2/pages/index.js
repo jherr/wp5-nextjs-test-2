@@ -1,7 +1,7 @@
 import React from "react";
 import Head from "next/head";
 
-const Nav = (await import("next1/nav")).default;
+const Nav = (await import("test1/nav")).default;
 
 const Home = () => (
   <div className="container">
