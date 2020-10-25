@@ -1098,7 +1098,7 @@
 
 "@module-federation/nexjs-mf@git+https://github.com/module-federation/nextjs-with-module-federation.git#rename-project":
   version "1.0.0"
-  resolved "git+https://github.com/module-federation/nextjs-with-module-federation.git#aca7c3c209166fdc85695ccf6d5e72db344e1355"
+  resolved "git+https://github.com/module-federation/nextjs-with-module-federation.git#d2e7b2c3d64601288b1f95ae86cb3b5c1dd07314"
 
 "@next/env@9.5.5":
   version "9.5.5"
